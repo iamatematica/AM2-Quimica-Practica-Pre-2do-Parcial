@@ -4,6 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Práctica preparcial · 2.º parcial · AM II</title>
+<script>
+(function(){ try {
+  if (/[?&]reiniciar(=|&|$)/.test(location.search)) {
+    if (confirm('¿Borrar todo lo que se hizo en esta práctica en este dispositivo (nombre, grupo, respuestas, intentos y fotos) y empezar de nuevo?')) {
+      localStorage.removeItem('am2q-estado-v1'); localStorage.removeItem('am2q-grupo');
+      try { indexedDB.deleteDatabase('am2q-fotos'); } catch (e) {}
+    }
+    location.replace(location.pathname);
+  }
+} catch (e) {} })();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;1,9..144,400&family=Fira+Code:wght@400;500&family=STIX+Two+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
